@@ -1,8 +1,8 @@
-# Mejoras
+# MEJORAS
 
 A continuación, una explicación detallada de cada una de las modificaciones (mejoras) solicitadas.
 
-## Funcionalidades Principales
+## Modificaciones solicitadas
 
 1. Corregir las notificaciones:
    - Se añadió una clase base `Notificacion` con un método `enviar_notificacion`.
@@ -60,3 +60,18 @@ A continuación, una explicación detallada de cada una de las modificaciones (m
     - Cada método usa Rich para mostrar las tablas de una manera más bonita.
 
 Estos cambios dieron como resultado un sistema de citas médicas más robusto, fácil de usar y con todas las características. El código ahora está mejor organizado, con una clara separación de responsabilidades entre las diferentes clases y funcionalidades. El uso de la biblioteca Rich ha mejorado significativamente la interfaz de usuario, haciéndola más legible y atractiva visualmente.
+
+## Mejoras propias (añadidas por mí)
+
+1. Se añadió la opción de que los pacientes puedan pedir citas por URGENCIAS: La gestión de urgencias permite priorizar citas urgentes sobre las regulares, lo cual es crucial en un entorno médico.La gestión de urgencias permite priorizar citas urgentes sobre las regulares, lo cual es crucial en un entorno médico.
+    - Fue creada la clase `CitaUrgente`, la cual hereda de `Cita`.
+    - Se modificó el método `agendar_cita` de la clase `Agenda` para manejar las citas urgentes.
+    - Se agregó una nueva opción en el menú principal para agendar citas urgentes.
+
+2. Fue añadido un sistema de feedback y calificaciones, el cual proporciona una forma de evaluar la calidad del servicio y la satisfacción del paciente, lo que puede ser útil para mejorar la atención médica.
+    - Se agregaron los atributos `calificacion` y `comentario` a la clase `Cita`.
+    - Se implementó el método `agregar_feedback` en la clase `Cita`.
+    - Se agregó el atributo `calificaciones` y el método `calificacion_promedio` a la clase `Medico`.
+    - Se agregaron dos nuevas opciones en el menú principal: Una para agregar feedback a una cita y otra para ver las calificaciones de los médicos.
+
+Estos cambios permiten al sistema manejar citas urgentes, dando prioridad sobre las citas regulares, y también permiten a los pacientes proporcionar feedback y calificaciones para sus citas, que luego se pueden ver como un promedio para cada médico.
