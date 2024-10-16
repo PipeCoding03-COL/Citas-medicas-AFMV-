@@ -338,15 +338,13 @@ def mostrar_menu():
             "5. Mover cita.\n"
             "6. Ver citas de un paciente.\n"
             "7. Ver citas de un médico.\n"
-            "8. Ver lista de pacientes.\n"
-            "9. Ver lista de médicos.\n"
-            "10. Ver lista de citas.\n"
-            "11. Buscar un paciente.\n"
-            "12. Buscar un médico.\n"
-            "13. Agendar cita urgente.\n"
-            "14. Agregar feedback a una cita.\n"
-            "15. Ver calificaciones de médicos.\n"
-            "16. Salir",
+            "8. Ver lista de citas.\n"
+            "9. Buscar un paciente.\n"
+            "10. Buscar un médico.\n"
+            "11. Agendar cita urgente.\n"
+            "12. Agregar feedback a una cita.\n"
+            "13. Ver calificaciones de médicos.\n"
+            "14. Salir",
             title="Sistema de Citas Médicas",
             border_style="bold green",
         )
@@ -500,15 +498,9 @@ def main():
                 print("Médico no encontrado")
 
         elif opcion == "8":
-            mostrar_lista_pacientes(hospital)
-
-        elif opcion == "9":
-            mostrar_lista_medicos(hospital)
-
-        elif opcion == "10":
             mostrar_lista_citas(hospital)
 
-        elif opcion == "11":
+        elif opcion == "9":
             paciente_id = Prompt.ask("Ingrese la identificación del paciente")
             paciente = hospital.buscar_paciente(paciente_id)
             if paciente:
@@ -531,7 +523,7 @@ def main():
             else:
                 print("Paciente no encontrado.")
 
-        elif opcion == "12":
+        elif opcion == "10":
             medico_id = Prompt.ask("Ingrese la identificación del médico")
             medico = hospital.buscar_medico(medico_id)
             if medico:
@@ -554,7 +546,7 @@ def main():
             else:
                 print("Médico no encontrado.")
 
-        elif opcion == "13":
+        elif opcion == "11":
             paciente_id = Prompt.ask("Ingrese la identificación del paciente")
             paciente = hospital.buscar_paciente(paciente_id)
             if paciente:
@@ -590,7 +582,7 @@ def main():
             else:
                 print("Paciente no encontrado")
 
-        elif opcion == "14":
+        elif opcion == "12":
             paciente_id = Prompt.ask("Ingrese la identificación del paciente")
             paciente = hospital.buscar_paciente(paciente_id)
             if paciente:
@@ -616,7 +608,7 @@ def main():
             else:
                 print("Paciente no encontrado")
 
-        elif opcion == "15":
+        elif opcion == "13":
             table = Table(
                 title="[bold white]CALIFICACIÓN PROMEDIO POR MÉDICO[/bold white]"
             )
@@ -632,7 +624,7 @@ def main():
 
             console.print(table)
 
-        elif opcion == "16":
+        elif opcion == "14":
             print("Gracias por usar el Sistema de Citas Médicas. ¡Hasta luego!")
             break
 
