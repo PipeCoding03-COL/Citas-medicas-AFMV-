@@ -6,6 +6,7 @@ from cita import Cita
 from cita_urgente import CitaUrgente
 from medico import Medico
 from datetime import datetime
+from rich import print
 from rich.console import Console
 
 console = Console()
