@@ -264,13 +264,13 @@ def cargar_datos_iniciales():
     hospital = Hospital()
 
     # Cargar pacientes iniciales
-    hospital.cargar_pacientes_desde_csv("pacientes.csv")
+    hospital.cargar_pacientes_desde_csv("data/pacientes.csv")
 
     # Cargar médicos iniciales
-    hospital.cargar_medicos_desde_json("medicos.json")
+    hospital.cargar_medicos_desde_json("data/medicos.json")
 
     # Cargar citas iniciales
-    hospital.cargar_citas_desde_csv("citas.csv")
+    hospital.cargar_citas_desde_csv("data/citas.csv")
 
     return hospital
 
@@ -339,14 +339,13 @@ def mostrar_menu():
             "7. Ver citas de un médico.\n"
             "8. Ver lista de pacientes.\n"
             "9. Ver lista de médicos.\n"
-            "10. Ver lista de citas.\n"
-            "11. Buscar un paciente.\n"
-            "12. Buscar un médico.\n"
-            "13. Agendar cita urgente.\n"
-            "14. Agregar feedback a una cita.\n"
-            "15. Ver calificaciones de médicos.\n"
-            "16. Salir",
-            title="Sistema de Citas Médicas",
+            "10. Buscar un paciente.\n"
+            "11. Buscar un médico.\n"
+            "12. Agendar cita urgente.\n"
+            "13. Agregar feedback a una cita.\n"
+            "14. Ver calificaciones de médicos.\n"
+            "15. Salir",
+            title="SISTEMA DE CITAS MÉDICAS",
             border_style="bold green",
         )
     )
@@ -375,7 +374,6 @@ def main():
                 "13",
                 "14",
                 "15",
-                "16",
             ],
         )
 
@@ -505,9 +503,6 @@ def main():
             mostrar_lista_medicos(hospital)
 
         elif opcion == "10":
-            mostrar_lista_citas(hospital)
-
-        elif opcion == "11":
             paciente_id = Prompt.ask("Ingrese la identificación del paciente")
             paciente = hospital.buscar_paciente(paciente_id)
             if paciente:
@@ -530,7 +525,7 @@ def main():
             else:
                 print("Paciente no encontrado.")
 
-        elif opcion == "12":
+        elif opcion == "11":
             medico_id = Prompt.ask("Ingrese la identificación del médico")
             medico = hospital.buscar_medico(medico_id)
             if medico:
@@ -553,7 +548,7 @@ def main():
             else:
                 print("Médico no encontrado.")
 
-        elif opcion == "13":
+        elif opcion == "12":
             paciente_id = Prompt.ask("Ingrese la identificación del paciente")
             paciente = hospital.buscar_paciente(paciente_id)
             if paciente:
@@ -589,7 +584,7 @@ def main():
             else:
                 print("Paciente no encontrado")
 
-        elif opcion == "14":
+        elif opcion == "13":
             paciente_id = Prompt.ask("Ingrese la identificación del paciente")
             paciente = hospital.buscar_paciente(paciente_id)
             if paciente:
@@ -615,7 +610,7 @@ def main():
             else:
                 print("Paciente no encontrado")
 
-        elif opcion == "15":
+        elif opcion == "14":
             table = Table(
                 title="[bold white]CALIFICACIÓN PROMEDIO POR MÉDICO[/bold white]"
             )
@@ -631,7 +626,7 @@ def main():
 
             console.print(table)
 
-        elif opcion == "16":
+        elif opcion == "15":
             print("Gracias por usar el Sistema de Citas Médicas. ¡Hasta luego!")
             break
 
